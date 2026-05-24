@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Beat Republic Media Group — A Washington D.C. multi-disciplinary media laboratory. Live Production, Digital Management, and Creative Content. Sonic engineering meets visual narrative."/>
+<meta name="theme-color" content="#131313"/>
+<meta property="og:title" content="Beat Republic Media Group"/>
+<meta property="og:description" content="Producing the Cultural Movements That Outlast the Moment."/>
+<meta property="og:type" content="website"/>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.ico"/>
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.ico"/>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
+<title>BEAT REPUBLIC MEDIA GROUP | Cinematic Monolith</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-variant": "#353534",
+          "secondary-fixed-dim": "#c7c6c6",
+          "surface-container-lowest": "#0e0e0e",
+          "tertiary": "#b6c4ff",
+          "secondary": "#c7c6c6",
+          "on-background": "#e5e2e1",
+          "on-error": "#690005",
+          "on-primary-container": "#ffddd7",
+          "outline": "#ae8881",
+          "on-secondary-fixed": "#1b1c1c",
+          "error-container": "#93000a",
+          "on-primary-fixed": "#400200",
+          "error": "#ffb4ab",
+          "surface-container-low": "#1c1b1b",
+          "inverse-primary": "#be0f00",
+          "on-secondary": "#303031",
+          "tertiary-fixed": "#dce1ff",
+          "secondary-fixed": "#e4e2e2",
+          "on-tertiary-container": "#dfe3ff",
+          "inverse-on-surface": "#313030",
+          "inverse-surface": "#e5e2e1",
+          "surface-container": "#201f1f",
+          "primary-container": "#cc1100",
+          "surface-container-highest": "#353534",
+          "surface-dim": "#131313",
+          "surface": "#131313",
+          "on-primary-fixed-variant": "#910900",
+          "background": "#131313",
+          "on-tertiary": "#00287d",
+          "on-primary": "#670500",
+          "primary": "#ffb4a7",
+          "surface-tint": "#ffb4a7",
+          "tertiary-fixed-dim": "#b6c4ff",
+          "secondary-container": "#464747",
+          "on-tertiary-fixed": "#00164e",
+          "on-surface": "#e5e2e1",
+          "primary-fixed": "#ffdad4",
+          "on-secondary-container": "#b6b5b5",
+          "tertiary-container": "#0056f5",
+          "primary-fixed-dim": "#ffb4a7",
+          "outline-variant": "#5d3f3a",
+          "surface-container-high": "#2a2a2a",
+          "on-secondary-fixed-variant": "#464747",
+          "on-surface-variant": "#e7bdb6",
+          "surface-bright": "#3a3939",
+          "on-error-container": "#ffdad6",
+          "on-tertiary-fixed-variant": "#003baf"
+        },
+        "borderRadius": {
+          "DEFAULT": "0px",
+          "lg": "0px",
+          "xl": "0px",
+          "full": "9999px"
+        },
+        "fontFamily": {
+          "headline": ["Space Grotesk"],
+          "body": ["Space Grotesk"],
+          "label": ["Space Grotesk"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Space Grotesk', sans-serif; background-color: #131313; color: #e5e2e1; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .monolith-text { text-shadow: 0 0 40px rgba(204, 17, 0, 0.2); }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0e0e0e; }
+  ::-webkit-scrollbar-thumb { background: #cc1100; }
+  #form-msg { transition: opacity .3s; }
+
+  /* ── Contact items — unified ── */
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 20px;
+    background: #2a2a2a;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: default;
+  }
+  .contact-item:hover {
+    background: #333232;
+    transform: translateX(4px);
+  }
+  .contact-icon {
+    width: 48px; height: 48px;
+    flex-shrink: 0;
+    background: #2a2a2a;
+    border: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+  .contact-item:hover .contact-icon {
+    border-color: rgba(204,17,0,0.4);
+  }
+  .contact-icon-symbol {
+    font-size: 20px;
+    color: #c7c6c6;
+    transition: color 0.3s ease;
+  }
+  .contact-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #555353;
+    margin-bottom: 4px;
+  }
+  .contact-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #e5e2e1;
+  }
+  .contact-link {
+    color: #e5e2e1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .contact-link:hover { color: #cc1100; }
+
+  /* ── Hero letter animation ── */
+  .hero-eyebrow {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeSlideUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.2s forwards;
+  }
+  .hero-word {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+  .hero-letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(110%) skewX(8deg);
+    animation: letterIn 0.75s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+  /* BEAT letters */
+  .hero-letter.beat-0 { animation-delay: 0.4s; }
+  .hero-letter.beat-1 { animation-delay: 0.52s; }
+  .hero-letter.beat-2 { animation-delay: 0.64s; }
+  .hero-letter.beat-3 { animation-delay: 0.76s; }
+  /* REPUBLIC letter delays handled by .rep-letter rules below */
+  @keyframes letterIn {
+    to { opacity: 1; transform: translateY(0) skewX(0deg); }
+  }
+  @keyframes fadeSlideUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Red underline sweep on REPUBLIC after letters land */
+  .republic-underline {
+    display: block;
+    height: 4px;
+    background: #cc1100;
+    width: 0;
+    margin-top: 4px;
+    animation: underlineSweep 0.6s cubic-bezier(0.16,1,0.3,1) 2.2s forwards;
+    box-shadow: 0 0 20px rgba(204,17,0,0.6);
+  }
+  @keyframes underlineSweep {
+    to { width: 100%; }
+  }
+
+  /* ── Letter hover color swap ── */
+  /* BEAT letters are white — hover turns them signal red */
+  .hero-letter.beat-letter {
+    transition: color 0.15s ease, text-shadow 0.15s ease;
+    cursor: default;
+  }
+  .hero-letter.beat-letter:hover {
+    color: #cc1100 !important;
+    text-shadow: 0 0 30px rgba(204,17,0,0.7);
+  }
+  /* REPUBLIC letters are red — hover turns them white, pauses glow animation */
+  .hero-letter.rep-letter {
+    transition: color 0.15s ease, text-shadow 0.15s ease;
+    cursor: default;
+  }
+  .hero-letter.rep-letter:hover {
+    color: #ffffff !important;
+    text-shadow: 0 0 30px rgba(255,255,255,0.5) !important;
+    animation-play-state: paused;
+  }
+
+  /* Red ambient glow on REPUBLIC letters — stacked with letterIn, not replacing it */
+  .republic-glow { display: inline-block; }
+  .rep-letter {
+    animation-name: letterIn, repGlow;
+    animation-duration: 0.75s, 3s;
+    animation-timing-function: cubic-bezier(0.16,1,0.3,1), ease-in-out;
+    animation-fill-mode: forwards, none;
+    animation-iteration-count: 1, infinite;
+    /* repGlow starts after letterIn finishes — delay is letter delay + 0.75s duration + extra buffer */
+  }
+  /* Override repGlow delay per letter so it starts after that letter has landed */
+  .rep-letter.rep-0  { animation-delay: 0.95s, 2.8s; }
+  .rep-letter.rep-1  { animation-delay: 1.04s, 2.8s; }
+  .rep-letter.rep-2  { animation-delay: 1.13s, 2.8s; }
+  .rep-letter.rep-3  { animation-delay: 1.22s, 2.8s; }
+  .rep-letter.rep-4  { animation-delay: 1.31s, 2.8s; }
+  .rep-letter.rep-5  { animation-delay: 1.40s, 2.8s; }
+  .rep-letter.rep-6  { animation-delay: 1.49s, 2.8s; }
+  .rep-letter.rep-7  { animation-delay: 1.58s, 2.8s; }
+  @keyframes repGlow {
+    0%, 100% { text-shadow: 0 0 20px rgba(204,17,0,0.15); }
+    50%       { text-shadow: 0 0 40px rgba(204,17,0,0.5), 0 0 80px rgba(204,17,0,0.2); }
+  }
+
+
+  /* ── Flip Cards ── */
+  .flip-scene {
+    perspective: 1000px;
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+  }
+  .flip-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+  .flip-scene:hover .flip-card {
+    transform: rotateY(180deg);
+  }
+  .flip-front {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+  }
+  .flip-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+    transform: rotateY(180deg);
+    background: #1c1b1b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 36px;
+  }
+  .flip-back-chip {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    margin-bottom: 20px;
+    width: fit-content;
+  }
+  .flip-back-chip.red  { background: #cc1100; color: #fff; }
+  .flip-back-chip.grey { background: #2a2a2a; color: #c7c6c6; }
+  .flip-back h3 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: #e5e2e1;
+    margin-bottom: 16px;
+  }
+  .flip-back p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #9a9898;
+  }
+  .flip-back-line {
+    width: 40px;
+    height: 3px;
+    background: #cc1100;
+    margin-bottom: 24px;
+  }
+
+  /* ── Division panel cards ── */
+  .div-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(40px, 6vw, 100px);
+    padding: clamp(48px, 6vw, 80px);
+    background: #131313;
+    position: relative;
+  }
+  .div-panel:nth-child(even) { background: #0e0e0e; }
+  .div-panel:nth-child(even) .div-text-col { order: 2; }
+  .div-panel:nth-child(even) .div-visual-col { order: 1; }
+  .div-text-col {
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    padding: 32px;
+  }
+  .div-label {
+    font-family: 'Space Grotesk', monospace;
+    font-size: .6rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(201,30,0,0.85);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .div-label::before {
+    content: '';
+    width: 40px; height: 1px;
+    background: #c91e00;
+    flex-shrink: 0;
+  }
+  .div-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    color: #e5e2e1;
+    text-shadow: 0 2px 25px rgba(0,0,0,0.9);
+  }
+  .div-heading .accent { color: #c91e00; }
+  .div-body {
+    font-size: clamp(.85rem, 1vw, .95rem);
+    line-height: 1.8;
+    color: rgba(229,226,225,0.6);
+    margin-bottom: 32px;
+    max-width: 480px;
+    text-shadow: 0 1px 15px rgba(0,0,0,0.7);
+  }
+  .div-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .div-tag {
+    font-family: 'Space Grotesk', monospace;
+    font-size: .62rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(229,226,225,0.45);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 8px 16px;
+    transition: all .3s cubic-bezier(.23,1,.32,1);
+    cursor: default;
+  }
+  .div-tag:hover {
+    color: #c91e00;
+    border-color: rgba(201,30,0,0.35);
+    background: rgba(201,30,0,0.04);
+    transform: translateY(-1px);
+  }
+  .div-visual-col {
+    position: relative;
+    height: 50vh;
+    min-height: 360px;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.01);
+    overflow: hidden;
+  }
+  .div-visual-col::before {
+    content: '';
+    position: absolute; top: -1px; right: -1px;
+    width: 60px; height: 60px;
+    border-top: 1px solid #c91e00;
+    border-right: 1px solid #c91e00;
+    z-index: 2;
+    transition: width .4s, height .4s;
+  }
+  .div-visual-col::after {
+    content: '';
+    position: absolute; bottom: -1px; left: -1px;
+    width: 60px; height: 60px;
+    border-bottom: 1px solid #c91e00;
+    border-left: 1px solid #c91e00;
+    z-index: 2;
+    transition: width .4s, height .4s;
+  }
+  .div-visual-col:hover::before,
+  .div-visual-col:hover::after { width: 90px; height: 90px; }
+  .div-visual-canvas {
+    width: 100%; height: 100%;
+    display: block;
+  }
+  .div-visual-num {
+    position: absolute; bottom: 20px; right: 24px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: 7rem;
+    line-height: 1;
+    color: rgba(255,255,255,0.03);
+    z-index: 1;
+    pointer-events: none;
+    letter-spacing: -0.05em;
+  }
+  @media (max-width: 900px) {
+    .div-panel { grid-template-columns: 1fr; padding: 40px 24px; }
+    .div-panel:nth-child(even) .div-text-col { order: 1; }
+    .div-panel:nth-child(even) .div-visual-col { order: 2; }
+    .div-visual-col { height: 300px; min-height: 260px; }
+  }
+
+  /* ── Section reveal animations — standard ── */
+  .sr-item {
+    opacity: 0;
+    transform: translateY(48px);
+    transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  }
+  .sr-item.visible { opacity: 1; transform: translateY(0); }
+  .sr-item.delay-1 { transition-delay: 0.1s; }
+  .sr-item.delay-2 { transition-delay: 0.2s; }
+  .sr-item.delay-3 { transition-delay: 0.3s; }
+
+  /* ── Sound & Vision dramatic breath reveal ── */
+  /* Slower duration, bigger lift, wider stagger — feels like an inhale */
+  .sr-breath {
+    opacity: 0;
+    transform: translateY(80px) scale(0.97);
+    transition:
+      opacity   1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transform 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .sr-breath.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  /* Stagger each card so they breathe in one after another */
+  .sr-breath.b-delay-0 { transition-delay: 0s; }
+  .sr-breath.b-delay-1 { transition-delay: 0.35s; }
+  .sr-breath.b-delay-2 { transition-delay: 0.7s; }
+  .sr-breath.b-delay-3 { transition-delay: 1.05s; }
+
+  #boxes-grid {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) skewX(-48deg) skewY(14deg) scale(0.675) translateZ(0);
+    display: grid;
+    grid-template-columns: repeat(20, 64px);
+    grid-template-rows: repeat(20, 32px);
+    width: 1280px;
+    height: 640px;
+  }
+  .box-cell {
+    width: 64px;
+    height: 32px;
+    border-right: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    background-color: transparent;
+    position: relative;
+    box-sizing: border-box;
+  }
+  .box-plus {
+    position: absolute;
+    width: 40px;
+    height: 24px;
+    top: -12px;
+    left: -20px;
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  /* ═══════════════════════════════════════════
+     MOBILE OPTIMIZATIONS  (max-width: 768px)
+     ═══════════════════════════════════════════ */
+  @media (max-width: 768px) {
+
+    /* ── Nav ── */
+    nav { padding: 0 !important; }
+    #nav-hamburger { display: flex !important; }
+    #main-nav .hidden.md\:flex { display: none !important; }
+    #main-nav .hidden.md\:block { display: none !important; }
+
+    /* ── Hero ── */
+    header { padding: 0 20px 60px !important; }
+
+    /* ── Hero breathe spacer — shorter on mobile ── */
+    #hero-breathe { height: 100vh !important; }
+
+    /* ── Sound & Vision video track — shorter scrub on mobile ── */
+    #sound-scroll-track { height: 250vh !important; }
+
+    /* ── Sound text overlay ── */
+    #sound-text-overlay { padding: 0 20px !important; bottom: 60px !important; }
+    #sound-text-overlay .text-5xl { font-size: 2.2rem !important; }
+
+    /* ── Box grid — disable on mobile (too heavy, not touch-friendly) ── */
+    #boxes-grid { display: none !important; }
+
+    /* ── Flip cards — tap to flip on mobile ── */
+    .flip-scene { min-height: 280px !important; }
+
+    /* ── Stats bar ── */
+    .max-w-7xl.grid.grid-cols-2 { gap: 24px !important; }
+
+    /* ── About/Journey flip card rows ── */
+    .md\:col-span-8,
+    .md\:col-span-4 { min-height: 240px !important; }
+
+    /* ── Division panels — already 1-col at 900px, tighten further ── */
+    .div-panel { padding: 32px 20px !important; gap: 32px !important; }
+    .div-visual-col { height: 220px !important; min-height: 220px !important; }
+    .div-heading { font-size: clamp(2rem, 8vw, 3rem) !important; }
+
+    /* ── Journey section ── */
+    #journey { padding: 60px 20px !important; }
+    .md\:col-span-8 .flip-scene,
+    .md\:col-span-4 .flip-scene { min-height: 260px !important; }
+
+    /* ── Connect section ── */
+    #connect { padding: 60px 20px !important; }
+    #connect .lg\:grid-cols-2 { gap: 40px !important; }
+    #connect h2 { font-size: clamp(2.5rem, 10vw, 4rem) !important; }
+
+    /* ── Form ── */
+    #contactForm { padding: 28px 20px !important; }
+
+    /* ── Footer ── */
+    footer { padding: 40px 20px !important; gap: 24px !important; text-align: center; }
+    footer .flex.gap-12 { gap: 20px !important; flex-wrap: wrap; justify-content: center; }
+
+    /* ── Sound panel border radius ── */
+    #sound-panel { border-radius: 16px 16px 0 0 !important; }
+
+    /* ── About section intro ── */
+    #about > div { padding: 40px 20px 0 !important; }
+    #about .text-5xl { font-size: 2.2rem !important; }
+
+    /* ── About mission section — stack on mobile ── */
+    #about .flex.justify-content-space-between,
+    #about [style*="display:flex"][style*="justify-content:space-between"] {
+      flex-direction: column !important;
+      gap: 32px !important;
+    }
+    #about [style*="max-width:420px"],
+    #about [style*="max-width:480px"] { max-width: 100% !important; }
+
+    /* ── Hero padding ── */
+    header { padding: 0 16px 80px !important; }
+    #hero-parallax-text { padding: 0 !important; }
+
+    /* ── Connect gap ── */
+    #connect > div { gap: 32px !important; }
+
+    /* ── Objective card ── */
+    #objective-card { padding: 0 24px !important; }
+    #objective-card h2 { font-size: clamp(2rem, 12vw, 4rem) !important; }
+    #objective-card p { font-size: 1rem !important; }
+
+    /* ── Stats numbers ── */
+    .text-6xl { font-size: 2.5rem !important; }
+
+    /* ── Portfolio heading ── */
+    #journey h2 { font-size: clamp(2.5rem, 10vw, 4rem) !important; }
+
+    /* ── Card parallax disabled on mobile — too jittery ── */
+    .card-parallax-text { transform: none !important; }
+  }
+
+  /* ── Touch: flip cards on tap ── */
+  @media (hover: none) {
+    /* Disable hover-based flip — JS handles tap */
+    .flip-scene:hover .flip-card { transform: none; }
+    .flip-card.flipped { transform: rotateY(180deg) !important; }
+    /* Disable hover transforms that don't work on touch */
+    .div-tag:hover { transform: none; }
+    .contact-item:hover { transform: none; }
+  }
+
+  /* ── Cinematic card text parallax ── */
+  .card-parallax-text {
+    will-change: transform;
+    transition: none;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ── Audit-consolidated utility classes ── */
+  .stat-row  { display:flex; align-items:baseline; gap:10px; margin-bottom:8px; }
+  .stat-word { font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#5d5b5b; }
+  .flip-img  { width:100%; height:100%; object-fit:cover; display:block; }
+  .flip-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,transparent 60%); }
+  .flip-front-content { position:absolute; bottom:0; left:0; padding:32px; }
+
+</style>
+</head>
+<body class="bg-background text-on-surface overflow-x-hidden selection:bg-primary-container selection:text-white">
+
+<!-- TopNavBar -->
+<nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl shadow-[0px_24px_48px_rgba(0,0,0,0.5)]">
+  <!-- Main nav bar -->
+  <div class="flex justify-between items-center px-6 md:px-8 py-3 md:py-4 relative">
+
+    <!-- Logo — links to hero -->
+    <a href="#" style="display:block; flex-shrink:0; min-width:44px; min-height:44px;">
+      <img src="brmg_nav_logo.png" alt="BRMG" style="height:38px; width:auto; display:block; object-fit:contain;"/>
+    </a>
+
+    <!-- Desktop links — centered absolutely -->
+    <div class="hidden md:flex gap-12 absolute left-1/2 -translate-x-1/2">
+      <a class="text-white font-['Space_Grotesk'] uppercase tracking-tighter hover:text-red-600 transition-colors duration-300 px-4 py-2" href="#about">Services</a>
+      <a class="text-white font-['Space_Grotesk'] uppercase tracking-tighter hover:text-red-600 transition-colors duration-300 px-4 py-2" href="#journey">Portfolio</a>
+    </div>
+
+    <!-- Right side: Connect + hamburger -->
+    <div class="flex items-center gap-4">
+      <button onclick="document.getElementById('connect').scrollIntoView({behavior:'smooth'})"
+        class="hidden md:block bg-primary-container text-on-primary-container font-black px-8 py-2 active:opacity-80 transition-all hover:shadow-[0_0_20px_rgba(204,17,0,0.4)]">
+        + CONNECT
+      </button>
+      <!-- Hamburger — mobile only -->
+      <button id="nav-hamburger" aria-label="Open menu"
+        style="display:none; flex-direction:column; justify-content:center; gap:5px; width:44px; height:44px; padding:8px; cursor:pointer; background:none; border:none;"
+        onclick="toggleMobileNav()">
+        <span class="nav-bar" style="display:block; height:2px; background:#e5e2e1; border-radius:2px; transition:transform 0.3s, opacity 0.3s;"></span>
+        <span class="nav-bar" style="display:block; height:2px; background:#e5e2e1; border-radius:2px; transition:opacity 0.3s;"></span>
+        <span class="nav-bar" style="display:block; height:2px; background:#e5e2e1; border-radius:2px; transition:transform 0.3s, opacity 0.3s;"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div id="mobile-drawer" style="
+    display:none;
+    flex-direction:column;
+    gap:0;
+    background:#131313;
+    border-top:1px solid rgba(255,255,255,0.06);
+    padding:8px 0 16px;
+  ">
+    <a href="#about" onclick="closeMobileNav()" style="
+      display:block; padding:16px 24px;
+      font-family:'Space Grotesk',sans-serif; font-weight:700;
+      font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase;
+      color:#e5e2e1; text-decoration:none;
+      border-bottom:1px solid rgba(255,255,255,0.04);
+      transition:color 0.2s;">Services</a>
+    <a href="#journey" onclick="closeMobileNav()" style="
+      display:block; padding:16px 24px;
+      font-family:'Space Grotesk',sans-serif; font-weight:700;
+      font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase;
+      color:#e5e2e1; text-decoration:none;
+      border-bottom:1px solid rgba(255,255,255,0.04);
+      transition:color 0.2s;">Portfolio</a>
+    <div style="padding:16px 24px 4px;">
+      <button onclick="closeMobileNav(); document.getElementById('connect').scrollIntoView({behavior:'smooth'})"
+        style="width:100%; background:#c91e00; color:#fff; font-weight:900; font-size:0.8rem;
+        letter-spacing:0.15em; text-transform:uppercase; padding:14px; border:none; cursor:pointer;">
+        + CONNECT
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script>
+function toggleMobileNav() {
+  var drawer = document.getElementById('mobile-drawer');
+  var bars   = document.querySelectorAll('.nav-bar');
+  var isOpen = drawer.style.display === 'flex';
+  drawer.style.display = isOpen ? 'none' : 'flex';
+  bars[0].style.transform = isOpen ? '' : 'translateY(7px) rotate(45deg)';
+  bars[1].style.opacity   = isOpen ? '1' : '0';
+  bars[2].style.transform = isOpen ? '' : 'translateY(-7px) rotate(-45deg)';
+}
+function closeMobileNav() {
+  var drawer = document.getElementById('mobile-drawer');
+  var bars   = document.querySelectorAll('.nav-bar');
+  drawer.style.display = 'none';
+  bars[0].style.transform = '';
+  bars[1].style.opacity   = '1';
+  bars[2].style.transform = '';
+}
+</script>
+
+<!-- Hero Section -->
+<header class="relative h-screen w-full flex flex-col justify-end px-8 pb-12 overflow-hidden bg-[#0e0e0e]">
+  <div id="boxes-parallax" style="position:absolute;inset:0;z-index:0;overflow:hidden;">
+    <div id="boxes-grid"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;z-index:2;background:radial-gradient(ellipse 70% 70% at 50% 50%, transparent 35%, #0e0e0e 75%);"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;z-index:3;background:linear-gradient(to top, #131313 0%, transparent 50%);"></div>
+  </div>
+  <div id="hero-parallax-text" class="relative z-20 w-full flex flex-col items-start px-8">
+    <p class="hero-eyebrow text-secondary font-headline text-lg md:text-xl mb-4 max-w-2xl tracking-tight leading-tight uppercase">
+      Producing the Cultural Movements That Outlast the Moment.
+    </p>
+    <h1 class="font-black leading-[0.85] tracking-tighter uppercase" style="font-size: clamp(3rem, 8.5vw, 11rem); white-space: nowrap; overflow: visible;">
+      <span class="hero-word text-white">
+        <span class="hero-letter beat-0 beat-letter">B</span><span class="hero-letter beat-1 beat-letter">E</span><span class="hero-letter beat-2 beat-letter">A</span><span class="hero-letter beat-3 beat-letter">T</span>
+      </span>
+      <span style="display:inline-block;width:0.25em;"></span>
+      <span class="hero-word" style="display:inline-block;">
+        <span class="republic-glow" style="display:inline-block;">
+          <span class="hero-letter rep-0 rep-letter text-primary-container">R</span><span class="hero-letter rep-1 rep-letter text-primary-container">E</span><span class="hero-letter rep-2 rep-letter text-primary-container">P</span><span class="hero-letter rep-3 rep-letter text-primary-container">U</span><span class="hero-letter rep-4 rep-letter text-primary-container">B</span><span class="hero-letter rep-5 rep-letter text-primary-container">L</span><span class="hero-letter rep-6 rep-letter text-primary-container">I</span><span class="hero-letter rep-7 rep-letter text-primary-container">C</span>
+        </span>
+        <span class="republic-underline"></span>
+      </span>
+    </h1>
+  </div>
+</header>
+
+<!-- Hero breathing room — 150vh of scroll so hero fully rotates before sound panel rises -->
+<div id="hero-breathe" style="height:220vh; position:relative; z-index:1; background:transparent; pointer-events:none;"></div>
+
+<!-- Sound & Vision — slides UP over sticky hero, rounded top corners -->
+<!--
+  STRUCTURE (matches the screenshot exactly):
+  - Hero is sticky z-index:0  → stays pinned, scales/rotates as Section1
+  - Sound panel is in normal flow, z-index:2, with border-radius on top corners
+  → it physically slides up and over the hero just like Section2 in the reference
+  - Inside the panel: a tall scroll track (400vh) with a sticky video scrubber
+-->
+<div id="sound-panel" style="
+  position: relative;
+  z-index: 2;
+  border-radius: 24px 24px 0 0;
+  background: #0e0e0e;
+">
+  <!-- Rounded top-corner mask — sits above video, doesn't break sticky -->
+  <div style="
+    position:absolute; top:0; left:0; right:0; height:24px;
+    background:transparent;
+    border-radius:24px 24px 0 0;
+    z-index:10; pointer-events:none;
+    box-shadow: 0 -24px 0 0 #131313;
+  "></div>
+  <!-- Tall scroll track — gives 400vh to scrub the video -->
+  <div id="sound-scroll-track" style="height: 400vh; position: relative;">
+
+    <div style="position:sticky; top:0; height:100vh; border-radius:24px 24px 0 0; overflow:clip;">
+
+      <video
+        id="sound-video"
+        src="video.mp4"
+        muted playsinline preload="auto"
+        style="width:100%; height:100%; object-fit:cover; display:block;"
+      ></video>
+
+      <!-- Single scroll wrapper — white and black text stack, crossfade on scroll -->
+      <div id="sound-text-overlay" style="
+        position:absolute; bottom:80px; left:0; right:0;
+        padding:0 48px;
+        z-index:2; pointer-events:none;
+        opacity:0;
+      ">
+        <!-- WHITE layer — visible at start, fades out at 80% progress -->
+        <div id="sound-white-layer" style="position:relative; width:100%;">
+          <div style="max-width:1280px; margin:0 auto; display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap;">
+            <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none" id="sound-heading"
+                style="color:#e5e2e1; opacity:0; transform:translateY(24px); transition:opacity 1.8s cubic-bezier(0.25,0.46,0.45,0.94), transform 1.8s cubic-bezier(0.25,0.46,0.45,0.94);">
+              SOUND &amp; <br/><span style="color:#cc1100;">VISION</span>
+            </h2>
+            <p id="sound-subtext"
+               style="color:rgba(229,226,225,0.7); max-width:420px; font-size:1.1rem; line-height:1.6; opacity:0; transform:translateY(24px); transition:opacity 1.8s 0.25s cubic-bezier(0.25,0.46,0.45,0.94), transform 1.8s 0.25s cubic-bezier(0.25,0.46,0.45,0.94);">
+              A multi-disciplinary media laboratory where sonic engineering meets visual narrative. Scroll to experience the work.
+            </p>
+          </div>
+        </div>
+        <!-- BLACK layer — exact same layout, fades in at 80% progress -->
+        <div id="sound-black-layer" style="position:absolute; top:0; left:48px; right:48px; opacity:0;">
+          <div style="max-width:1280px; margin:0 auto; display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap;">
+            <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none"
+                style="color:#000000;">
+              SOUND &amp; <br/><span style="color:#000000;">VISION</span>
+            </h2>
+            <p style="color:#111111; max-width:420px; font-size:1.1rem; line-height:1.6;">
+              A multi-disciplinary media laboratory where sonic engineering meets visual narrative. Scroll to experience the work.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- End-frame title card — left aligned, nested in sticky, moves with scroll -->
+      <div id="objective-card" style="
+        position:absolute;
+        bottom:80px;
+        left:48px;
+        right:48px;
+        z-index:4;
+        pointer-events:none;
+        opacity:0;
+      ">
+        <p style="
+          font-size:0.6rem;
+          font-weight:700;
+          letter-spacing:0.35em;
+          text-transform:uppercase;
+          color:#000000;
+          opacity:0.5;
+          margin-bottom:16px;
+        ">Beat Republic Media Group</p>
+        <h2 style="
+          font-family:'Space Grotesk',sans-serif;
+          font-size:clamp(2.5rem,6vw,6rem);
+          font-weight:900;
+          letter-spacing:-0.03em;
+          text-transform:uppercase;
+          line-height:0.88;
+          color:#000000;
+        ">The<br/>Objective</h2>
+        <div style="width:48px;height:3px;background:#000000;margin:20px 0;opacity:0.3;"></div>
+        <p style="
+          font-size:clamp(0.9rem,1.5vw,1.2rem);
+          font-weight:400;
+          color:#111111;
+          max-width:480px;
+          line-height:1.6;
+        ">To Build What the Culture Runs On.</p>
+      </div>
+
+      <!-- Scroll hint -->
+      <div id="scroll-hint" style="
+        position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+        display:flex; flex-direction:column; align-items:center; gap:8px;
+        opacity:1; transition:opacity 0.5s; pointer-events:none;
+      ">
+        <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:rgba(229,226,225,0.5);">Scroll to scrub</span>
+        <svg width="16" height="24" viewBox="0 0 16 24" fill="none">
+          <rect x="1" y="1" width="14" height="22" rx="7" stroke="rgba(229,226,225,0.3)" stroke-width="1.5"/>
+          <rect x="6.5" y="5" width="3" height="5" rx="1.5" fill="rgba(204,17,0,0.8)">
+            <animate attributeName="y" values="5;12;5" dur="1.5s" repeatCount="indefinite"/>
+          </rect>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var track    = document.getElementById('sound-scroll-track');
+  var video    = document.getElementById('sound-video');
+  var hint     = document.getElementById('scroll-hint');
+  var hintGone = false;
+  var ticking  = false;
+
+  var textOverlay  = document.getElementById('sound-text-overlay');
+  var soundHeading = document.getElementById('sound-heading');
+  var soundSubtext = document.getElementById('sound-subtext');
+  var textRevealed = false;
+  // Scrub is held for this many px after locking, giving text time to reveal
+  var REVEAL_HOLD  = window.innerHeight * 0.6; // 60vh of scroll = ~1.8s at normal pace
+
+  function scrub() {
+    if (!track || !video) { ticking = false; return; }
+
+    var rect     = track.getBoundingClientRect();
+    var trackH   = track.offsetHeight;
+    var vpH      = window.innerHeight;
+    var scrolled = -rect.top; // negative = panel above viewport top
+
+    // Reveal text as soon as panel reaches top (scrolled >= 0)
+    if (!textRevealed && scrolled >= 0) {
+      textRevealed = true;
+      // Wrapper visible — individual elements have their own transitions
+      if (textOverlay) {
+        textOverlay.style.opacity = '1';
+      }
+      if (soundHeading) {
+        soundHeading.style.opacity   = '1';
+        soundHeading.style.transform = 'translateY(0)';
+      }
+      if (soundSubtext) {
+        soundSubtext.style.opacity   = '1';
+        soundSubtext.style.transform = 'translateY(0)';
+      }
+    }
+
+    // Hold video at frame 0 while panel hasn't locked yet
+    if (rect.top > 0) {
+      if (video.duration) video.currentTime = 0;
+      ticking = false;
+      return;
+    }
+
+    // Hold scrub during text reveal, then scrub normally
+    var scrubScrolled = Math.max(0, scrolled - REVEAL_HOLD);
+    var range         = Math.max(1, trackH - vpH - REVEAL_HOLD);
+    var progress      = Math.max(0, Math.min(1, scrubScrolled / range));
+
+    if (video.duration) video.currentTime = progress * video.duration;
+
+    if (!hintGone && scrolled > REVEAL_HOLD * 0.3) {
+      hint.style.opacity = '0';
+      hintGone = true;
+    }
+
+    // Both text layers scroll up together — same translateY
+    // White fades OUT as black fades IN between 40%–70% progress
+    if (textOverlay && textRevealed) {
+      var moveUp = progress * (vpH + 300);
+
+      // Single wrapper scrolls up — white and black layers crossfade inside it
+      textOverlay.style.transition = 'none';
+      textOverlay.style.transform  = 'translateY(-' + moveUp + 'px)';
+      textOverlay.style.opacity    = '1'; // wrapper always visible once revealed
+
+      // White layer fades out 80%→95%
+      var whiteLayer = document.getElementById('sound-white-layer');
+      if (whiteLayer) {
+        var whiteOp = progress < 0.8 ? 1 : Math.max(0, 1 - (progress - 0.8) / 0.15);
+        whiteLayer.style.opacity = whiteOp;
+      }
+
+      // Black layer fades in 80%→95% — same timing, inverse
+      var blackLayer = document.getElementById('sound-black-layer');
+      if (blackLayer) {
+        var blackOp = progress < 0.8 ? 0 : Math.min(1, (progress - 0.8) / 0.15);
+        blackLayer.style.opacity = blackOp;
+      }
+
+    }
+
+    // "The Objective" — fades in at 65%, fully visible at 85%
+    // Nested in sticky div so it moves out naturally when video section exits
+    var objCard = document.getElementById('objective-card');
+    if (objCard) {
+      var objOp = progress < 0.65 ? 0 : Math.min(1, (progress - 0.65) / 0.2);
+      objCard.style.transition = 'none';
+      objCard.style.opacity = String(objOp);
+    }
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) { requestAnimationFrame(scrub); ticking = true; }
+  }, { passive: true });
+
+  if (video) {
+    video.addEventListener('loadedmetadata', scrub);
+    if (video.readyState >= 1) scrub();
+  }
+}());
+</script>
+
+<!-- Stats -->
+<section class="py-24 px-8 bg-surface-container-lowest border-y-0" style="position:relative; z-index:2;">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-4 sr-item">
+    <div class="flex flex-col">
+      <div class="stat-row">
+        <span class="text-primary-container font-black text-6xl">40+</span>
+        <span class="stat-word">Years</span>
+      </div>
+      <span class="text-secondary font-headline uppercase tracking-widest text-xs">At the Intersection of Sound, Culture &amp; Innovation</span>
+    </div>
+    <div class="flex flex-col">
+      <div class="stat-row">
+        <span class="text-primary-container font-black text-6xl">3</span>
+        <span class="stat-word">Divisions</span>
+      </div>
+      <span class="text-secondary font-headline uppercase tracking-widest text-xs">Built to Produce, Manage &amp; Amplify Your Vision</span>
+    </div>
+    <div class="flex flex-col">
+      <div class="stat-row">
+        <span class="text-primary-container font-black text-6xl">120+</span>
+        <span class="stat-word">Projects</span>
+      </div>
+      <span class="text-secondary font-headline uppercase tracking-widest text-xs">From DC Streets to Global Screens</span>
+    </div>
+    <div class="flex flex-col">
+      <div class="stat-row">
+        <span class="text-primary-container font-black text-6xl">24/7</span>
+        <span class="stat-word">Transmission</span>
+      </div>
+      <span class="text-secondary font-headline uppercase tracking-widest text-xs">Live. Digital. In Motion.</span>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- About / Divisions -->
+<section id="about" style="background:#131313; position:relative; z-index:2;">
+
+  <!-- Section intro — matches screenshot exactly -->
+  <div style="background:#ffffff; padding:64px 48px;">
+    <div style="max-width:1280px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap;">
+
+      <!-- Logo — no processing, displayed directly on cream background -->
+      <div class="sr-item" style="flex:0 0 auto; max-width:420px;">
+        <img src="brmg_logo.png" alt="Beat Republic Media Group" style="width:100%; height:auto; display:block;"/>
+      </div>
+
+      <!-- Mission statement — right side -->
+      <div class="sr-item delay-1" style="flex:1; min-width:280px; max-width:480px; border-left:2px solid #c91e00; padding-left:32px;">
+        <p style="font-size:0.6rem; font-weight:700; letter-spacing:0.3em; text-transform:uppercase; color:#c91e00; margin-bottom:16px;">Our Mission</p>
+        <p style="color:#1a1a1a; font-size:1rem; line-height:1.85;">
+          To empower entrepreneurs and creators by integrating high-end digital design, culture-driven content, and advanced automation — providing a comprehensive infrastructure that bridges the gap between creative storytelling and technical innovation to scale modern brands.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Division 01 — Live Production -->
+  <div class="div-panel sr-item">
+    <div class="div-text-col card-parallax-text">
+      <div class="div-label">Division 01</div>
+      <h2 class="div-heading">Live<br><span class="accent">Production</span></h2>
+      <p class="div-body">From broadcast master control to live event engineering, we operate at the intersection of signal and stage. BRMG Live Production delivers technical excellence across television networks, concert venues, and digital streams — anywhere the moment demands to be captured perfectly.</p>
+      <div class="div-tags">
+        <span class="div-tag">Broadcast Operations</span>
+        <span class="div-tag">Master Control</span>
+        <span class="div-tag">Live Streaming</span>
+        <span class="div-tag">Mobile Studios</span>
+        <span class="div-tag">SDI-over-IP</span>
+        <span class="div-tag">Dante Audio</span>
+      </div>
+    </div>
+    <div class="div-visual-col">
+      <canvas id="canvas-live" class="div-visual-canvas"></canvas>
+      <div class="div-visual-num">01</div>
+    </div>
+  </div>
+
+  <!-- Division 02 — Digital Management -->
+  <div class="div-panel sr-item">
+    <div class="div-text-col card-parallax-text">
+      <div class="div-label">Division 02</div>
+      <h2 class="div-heading">Digital<br><span class="accent">Management</span></h2>
+      <p class="div-body">Cloud architecture, AI-powered platforms, and immersive digital experiences built to move culture forward. From Go-Go DB and Go-Go Royalty VR to enterprise broadcast infrastructure — BRMG Digital Management engineers the technical backbone of tomorrow's media.</p>
+      <div class="div-tags">
+        <span class="div-tag">Cloud / AWS</span>
+        <span class="div-tag">AI Systems</span>
+        <span class="div-tag">VR / XR</span>
+        <span class="div-tag">Web Experiences</span>
+        <span class="div-tag">Cultural Tech</span>
+        <span class="div-tag">Go-Go DB</span>
+      </div>
+    </div>
+    <div class="div-visual-col">
+      <canvas id="canvas-digital" class="div-visual-canvas"></canvas>
+      <div class="div-visual-num">02</div>
+    </div>
+  </div>
+
+  <!-- Division 03 — Creative Content -->
+  <div class="div-panel sr-item">
+    <div class="div-text-col card-parallax-text">
+      <div class="div-label">Division 03</div>
+      <h2 class="div-heading">Creative<br><span class="accent">Content</span></h2>
+      <p class="div-body">We bring live entertainment to life and guide artists to success. From Go-Go culture events and concert production to artist development and music consulting — BRMG Creative Content is where the beat lives and the story gets told.</p>
+      <div class="div-tags">
+        <span class="div-tag">Event Production</span>
+        <span class="div-tag">Artist Development</span>
+        <span class="div-tag">Music Consulting</span>
+        <span class="div-tag">Go-Go Culture</span>
+        <span class="div-tag">Brand Campaigns</span>
+        <span class="div-tag">Crankington DC</span>
+      </div>
+    </div>
+    <div class="div-visual-col">
+      <canvas id="canvas-creative" class="div-visual-canvas"></canvas>
+      <div class="div-visual-num">03</div>
+    </div>
+  </div>
+
+</section>
+
+<script>
+(function() {
+  var RED = '#c91e00';
+
+  function animateCanvas(id, drawFn) {
+    var canvas = document.getElementById(id);
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var frame = 0;
+    var running = false;
+    var rafId = null;
+
+    function resize() {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    function loop() {
+      if (!running) return;
+      resize();
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawFn(ctx, canvas.width, canvas.height, frame);
+      frame++;
+      rafId = requestAnimationFrame(loop);
+    }
+
+    // Only animate when visible — pause when scrolled off screen
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          running = true;
+          loop();
+        } else {
+          running = false;
+          if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+        }
+      });
+    }, { threshold: 0.1 });
+    io.observe(canvas);
+  }
+
+  // Canvas 01 — Live Production: signal waveform bars
+  animateCanvas('canvas-live', function(ctx, w, h, f) {
+    ctx.fillStyle = 'rgba(19,19,19,0.92)';
+    ctx.fillRect(0, 0, w, h);
+    var bars = 32;
+    var bw = w / bars;
+    for (var i = 0; i < bars; i++) {
+      var t = (f * 0.03) + i * 0.4;
+      var amp = (Math.sin(t) * 0.4 + Math.sin(t * 1.7) * 0.3 + Math.sin(t * 0.5) * 0.3);
+      var bh = (0.08 + Math.abs(amp) * 0.6) * h;
+      var alpha = 0.3 + Math.abs(amp) * 0.7;
+      ctx.fillStyle = 'rgba(201,30,0,' + alpha + ')';
+      ctx.fillRect(i * bw + 2, h / 2 - bh / 2, bw - 4, bh);
+    }
+    // scan line
+    var scanX = ((f * 2) % w);
+    ctx.strokeStyle = 'rgba(201,30,0,0.25)';
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(scanX, 0); ctx.lineTo(scanX, h); ctx.stroke();
+  });
+
+  // Canvas 02 — Digital Management: grid nodes network
+  animateCanvas('canvas-digital', function(ctx, w, h, f) {
+    ctx.fillStyle = 'rgba(14,14,14,0.94)';
+    ctx.fillRect(0, 0, w, h);
+    var nodes = [];
+    var count = 12;
+    for (var i = 0; i < count; i++) {
+      var angle = (i / count) * Math.PI * 2 + f * 0.008;
+      var r = Math.min(w, h) * 0.32;
+      var jitter = Math.sin(f * 0.02 + i * 1.3) * 20;
+      nodes.push({
+        x: w / 2 + Math.cos(angle) * (r + jitter),
+        y: h / 2 + Math.sin(angle) * (r + jitter * 0.6)
+      });
+    }
+    // connections
+    for (var a = 0; a < nodes.length; a++) {
+      for (var b = a + 1; b < nodes.length; b++) {
+        var dx = nodes[a].x - nodes[b].x;
+        var dy = nodes[a].y - nodes[b].y;
+        var dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < w * 0.45) {
+          ctx.strokeStyle = 'rgba(201,30,0,' + (0.6 - dist / (w * 0.45) * 0.55) + ')';
+          ctx.lineWidth = 0.5;
+          ctx.beginPath(); ctx.moveTo(nodes[a].x, nodes[a].y); ctx.lineTo(nodes[b].x, nodes[b].y); ctx.stroke();
+        }
+      }
+    }
+    // nodes
+    for (var n = 0; n < nodes.length; n++) {
+      var pulse = 0.6 + Math.sin(f * 0.05 + n * 0.8) * 0.4;
+      ctx.beginPath();
+      ctx.arc(nodes[n].x, nodes[n].y, 3 * pulse, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(201,30,0,' + pulse + ')';
+      ctx.fill();
+    }
+    // center dot
+    ctx.beginPath(); ctx.arc(w/2, h/2, 5, 0, Math.PI*2);
+    ctx.fillStyle = RED; ctx.fill();
+  });
+
+  // Canvas 03 — Creative Content: frequency rings
+  // Canvas 03 — Creative Content: DAW / MIDI piano roll
+  animateCanvas('canvas-creative', function(ctx, w, h, f) {
+    // Background — dark DAW window
+    ctx.fillStyle = '#0e0e0e';
+    ctx.fillRect(0, 0, w, h);
+
+    // Header bar — DAW transport bar
+    ctx.fillStyle = '#1a1a1a';
+    ctx.fillRect(0, 0, w, 28);
+    // Transport dots
+    var dots = ['#c91e00','#555','#555'];
+    dots.forEach(function(c, i) {
+      ctx.beginPath();
+      ctx.arc(12 + i * 18, 14, 4, 0, Math.PI * 2);
+      ctx.fillStyle = c;
+      ctx.fill();
+    });
+    // BPM readout
+    ctx.fillStyle = '#c91e00';
+    ctx.font = 'bold 9px monospace';
+    ctx.fillText('BPM 93', w - 56, 18);
+    // Playhead label
+    ctx.fillStyle = '#444';
+    ctx.fillText('1.1.1', 80, 18);
+
+    // Timeline ruler
+    var rulerY = 28;
+    var rulerH = 16;
+    ctx.fillStyle = '#161616';
+    ctx.fillRect(0, rulerY, w, rulerH);
+    var bars = 16;
+    var barW = w / bars;
+    for (var b = 0; b < bars; b++) {
+      var bx = b * barW;
+      ctx.strokeStyle = '#333';
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(bx, rulerY); ctx.lineTo(bx, rulerY + rulerH); ctx.stroke();
+      if (b % 2 === 0) {
+        ctx.fillStyle = '#555';
+        ctx.font = '8px monospace';
+        ctx.fillText(b + 1, bx + 3, rulerY + 11);
+      }
+    }
+
+    // Piano roll area
+    var rollY = rulerY + rulerH;
+    var rollH = h - rollY;
+    var TRACKS = 8;
+    var trackH = rollH / TRACKS;
+
+    // Track rows
+    for (var t = 0; t < TRACKS; t++) {
+      var ty = rollY + t * trackH;
+      ctx.fillStyle = t % 2 === 0 ? '#111' : '#0e0e0e';
+      ctx.fillRect(0, ty, w, trackH);
+      // subtle row border
+      ctx.strokeStyle = '#1e1e1e';
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(0, ty); ctx.lineTo(w, ty); ctx.stroke();
+    }
+
+    // Vertical bar lines across roll
+    for (var b2 = 0; b2 <= bars; b2++) {
+      var lx = b2 * barW;
+      ctx.strokeStyle = b2 % 4 === 0 ? '#2a2a2a' : '#1a1a1a';
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(lx, rollY); ctx.lineTo(lx, h); ctx.stroke();
+    }
+
+    // MIDI notes — stable positions seeded, animated pulse
+    var notes = [
+      {t:0, bar:0,   len:1.5, col:0}, {t:1, bar:1.5, len:0.5, col:1},
+      {t:0, bar:2,   len:2,   col:2}, {t:2, bar:2.5, len:0.5, col:0},
+      {t:3, bar:3,   len:1,   col:3}, {t:1, bar:4,   len:1.5, col:1},
+      {t:5, bar:4.5, len:0.5, col:2}, {t:4, bar:5,   len:2,   col:0},
+      {t:2, bar:5.5, len:0.5, col:3}, {t:6, bar:6,   len:1,   col:1},
+      {t:0, bar:7,   len:1,   col:2}, {t:3, bar:7.5, len:0.5, col:0},
+      {t:7, bar:8,   len:1.5, col:3}, {t:1, bar:9,   len:1,   col:1},
+      {t:5, bar:10,  len:2,   col:2}, {t:4, bar:11,  len:0.5, col:0},
+      {t:2, bar:12,  len:1,   col:3}, {t:6, bar:13,  len:1.5, col:1},
+    ];
+
+    var noteColors = ['#c91e00','#a01500','#7a0f00','rgba(201,30,0,0.5)'];
+
+    notes.forEach(function(n) {
+      var nx    = n.bar * barW;
+      var nw    = n.len * barW - 2;
+      var ny    = rollY + n.t * trackH + 2;
+      var nh    = trackH - 4;
+      var pulse = 0.75 + Math.sin(f * 0.05 + n.bar * 0.7) * 0.25;
+      ctx.fillStyle = noteColors[n.col];
+      ctx.globalAlpha = pulse;
+      ctx.fillRect(nx + 1, ny, nw, nh);
+      // Note highlight top edge
+      ctx.fillStyle = 'rgba(255,255,255,0.15)';
+      ctx.fillRect(nx + 1, ny, nw, 2);
+      ctx.globalAlpha = 1;
+    });
+
+    // Playhead — animates across the roll
+    var playX = ((f * 1.2) % w);
+    ctx.strokeStyle = '#c91e00';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(playX, rulerY); ctx.lineTo(playX, h); ctx.stroke();
+    // Playhead triangle
+    ctx.fillStyle = '#c91e00';
+    ctx.beginPath();
+    ctx.moveTo(playX - 5, rulerY);
+    ctx.lineTo(playX + 5, rulerY);
+    ctx.lineTo(playX, rulerY + 8);
+    ctx.fill();
+  });
+}());
+</script>
+
+<!-- Journey -->
+<section id="journey" class="py-32 px-8 bg-surface overflow-hidden" style="position:relative; z-index:2;">
+  <div class="absolute top-0 left-0 w-1/2 h-full bg-primary-container opacity-[0.03] -skew-x-12 -translate-x-1/3 pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+      <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none">
+        THE <br/><span class="text-primary-container">PORTFOLIO</span>
+      </h2>
+      <p class="text-secondary-fixed-dim max-w-md font-body text-lg">
+        From the iconic stages that defined a generation to the immersive frontiers of artificial intelligence and virtual reality — Beat Republic Media Group has spent four decades engineering the sounds and stories that move culture forward.
+      </p>
+    </div>
+    <!-- Row 1 -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mb-4">
+
+      <!-- Go-Go Royalty VR — large -->
+      <div class="md:col-span-8 sr-breath b-delay-0" style="min-height:380px;">
+        <div class="flip-scene" style="min-height:380px;">
+          <div class="flip-card">
+            <div class="flip-front">
+              <img alt="Go-Go Royalty VR" class="flip-img"
+                src="GoGo_royalty.png"/>
+              <div class="flip-overlay"></div>
+              <div class="flip-front-content card-parallax-text">
+                <span class="inline-block bg-primary-container text-white text-[10px] font-bold px-3 py-1 mb-3 uppercase tracking-[0.2em]">Go-Go Culture</span>
+                <h3 class="text-3xl font-black uppercase tracking-tighter text-white">Go-Go Royalty VR</h3>
+              </div>
+            </div>
+            <div class="flip-back">
+              <span class="flip-back-chip red">Go-Go Culture</span>
+              <div class="flip-back-line"></div>
+              <h3>Go-Go Royalty VR</h3>
+              <p>Go-GoRoyaltyVR.com offers an immersive, 360-degree virtual reality experience that places fans directly in the center of Washington, D.C.'s most legendary performances. By capturing iconic bands like Rare Essence and Backyard Band in stunning VR, the platform preserves the raw energy of live shows for global audiences. It bridges the gap between historical preservation and cutting-edge technology, ensuring the culture remains vibrant and accessible.</p>
+              <a href="https://go-goroyaltyvr.com" target="_blank" style="display:inline-block;margin-top:16px;font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#cc1100;border:1px solid rgba(204,17,0,0.4);padding:8px 16px;transition:background 0.2s,color 0.2s;">Experience the Culture →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GoGo DB — small -->
+      <div class="md:col-span-4 sr-breath b-delay-1" style="min-height:380px;">
+        <div class="flip-scene" style="min-height:380px;">
+          <div class="flip-card">
+            <div class="flip-front">
+              <img alt="DevX" class="flip-img"
+                src="devx.png"/>
+              <div class="flip-overlay"></div>
+              <div class="flip-front-content card-parallax-text">
+                <span class="inline-block bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold px-3 py-1 mb-3 uppercase tracking-[0.2em]">Digital Management</span>
+                <h3 class="text-2xl font-black uppercase tracking-tighter text-white">DevX</h3>
+              </div>
+            </div>
+            <div class="flip-back">
+              <span class="flip-back-chip grey">Digital Management</span>
+              <div class="flip-back-line"></div>
+              <h3>DevX</h3>
+              <p>DevXDoes.com is an automation hub built to scale operations for musicians, entrepreneurs, and modern businesses — engineering production-grade websites and intelligent n8n workflows that eliminate manual tasks so creators can focus on their craft.</p>
+              <a href="https://devxdoes.com" target="_blank" style="display:inline-block;margin-top:16px;font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#cc1100;border:1px solid rgba(204,17,0,0.4);padding:8px 16px;">Visit DevXDoes.com →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Row 2 -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+
+      <!-- Don't Mute DC — small -->
+      <div class="md:col-span-4 sr-breath b-delay-2" style="min-height:340px;">
+        <div class="flip-scene" style="min-height:340px;">
+          <div class="flip-card">
+            <div class="flip-front">
+              <img alt="Go-Go Museum" class="flip-img" style="background:#fff;" src="gogo_museum.png"/>
+              <div class="flip-overlay"></div>
+              <div class="flip-front-content card-parallax-text">
+                <span class="inline-block bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold px-3 py-1 mb-3 uppercase tracking-[0.2em]">Go-Go Culture</span>
+                <h3 class="text-2xl font-black uppercase tracking-tighter text-white">Go-Go Museum</h3>
+              </div>
+            </div>
+            <div class="flip-back">
+              <span class="flip-back-chip grey">Go-Go Culture</span>
+              <div class="flip-back-line"></div>
+              <h3>Go-Go Museum</h3>
+              <p>The official digital home of D.C.'s Go-Go Museum &amp; Café in historic Anacostia — where interactive exhibits meet African Diaspora-inspired cuisine. A vital community hub for events, education, and the celebration of Go-Go as the District's official sound.</p>
+              <a href="https://www.gogomuseumcafe.com/" target="_blank" style="display:inline-block;margin-top:16px;font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#cc1100;border:1px solid rgba(204,17,0,0.4);padding:8px 16px;">Visit GoGoMuseumCafe.com →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Crankington DC — large -->
+      <div class="md:col-span-8 sr-breath b-delay-3" style="min-height:340px;">
+        <div class="flip-scene" style="min-height:340px;">
+          <div class="flip-card">
+            <div class="flip-front">
+              <img alt="GoGo Maps" class="flip-img"
+                src="GoGo_maps.png"/>
+              <div class="flip-overlay"></div>
+              <div class="flip-front-content card-parallax-text">
+                <span class="inline-block bg-primary-container text-white text-[10px] font-bold px-3 py-1 mb-3 uppercase tracking-[0.2em]">Cultural Mapping</span>
+                <h3 class="text-3xl font-black uppercase tracking-tighter text-white">GoGo Maps</h3>
+              </div>
+            </div>
+            <div class="flip-back">
+              <span class="flip-back-chip red">Cultural Mapping</span>
+              <div class="flip-back-line"></div>
+              <h3>GoGo Maps</h3>
+              <p>GoGoMaps.online is the definitive interactive guide to the landmarks, venues, and historic sites that define Washington, D.C.'s Go-Go landscape. By mapping the geography of the culture, the platform connects fans and tourists with the physical spaces where the music's history was made. It serves as an essential digital resource for navigating and preserving the District's unique musical heritage.</p>
+              <a href="https://gogomaps.online" target="_blank" style="display:inline-block;margin-top:16px;font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#cc1100;border:1px solid rgba(204,17,0,0.4);padding:8px 16px;transition:background 0.2s,color 0.2s;">Explore the Map →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Connect -->
+<section id="connect" class="py-32 px-8 bg-background overflow-hidden" style="position:relative; z-index:2;">
+  <div class="absolute top-0 right-0 w-1/3 h-full bg-primary-container opacity-5 -skew-x-12 translate-x-1/2 pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 relative z-10">
+    <div>
+      <h2 class="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-8">
+        INITIATE <br/>CONNECTION
+      </h2>
+      <p class="text-secondary text-xl font-body leading-relaxed max-w-md mb-12">
+        Enter the republic. Our frequency is always open for those looking to disrupt the visual and auditory status quo.
+      </p>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+
+        <!-- Email -->
+        <div class="contact-item group">
+          <div class="contact-icon group-hover:bg-primary-container transition-all duration-300">
+            <span class="material-symbols-outlined contact-icon-symbol group-hover:text-white transition-colors duration-300">mail</span>
+          </div>
+          <div class="contact-text">
+            <p class="contact-label">Enquiries</p>
+            <p class="contact-value"><a href="mailto:contact@brmgdc.com" class="contact-link group-hover:text-primary-container transition-colors duration-300">contact@brmgdc.com</a></p>
+          </div>
+        </div>
+
+        <!-- Twitter / X -->
+        <div class="contact-item group">
+          <div class="contact-icon group-hover:bg-primary-container transition-all duration-300">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="contact-icon-symbol group-hover:text-white transition-colors duration-300" style="width:20px;height:20px;color:#c7c6c6;">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </div>
+          <div class="contact-text">
+            <p class="contact-label">Twitter / X</p>
+            <p class="contact-value"><a href="https://x.com/beatrepublicmg" target="_blank" class="contact-link group-hover:text-primary-container transition-colors duration-300">@BeatRepublicMG</a></p>
+          </div>
+        </div>
+
+        <!-- Instagram -->
+        <div class="contact-item group">
+          <div class="contact-icon group-hover:bg-primary-container transition-all duration-300">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="contact-icon-symbol group-hover:text-white transition-colors duration-300" style="width:20px;height:20px;color:#c7c6c6;">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4.5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <div class="contact-text">
+            <p class="contact-label">Instagram</p>
+            <p class="contact-value"><a href="https://www.instagram.com/beatrepublicmg/" target="_blank" class="contact-link group-hover:text-primary-container transition-colors duration-300">@BeatRepublicMG</a></p>
+          </div>
+        </div>
+
+        <!-- Headquarters -->
+        <div class="contact-item group">
+          <div class="contact-icon group-hover:bg-primary-container transition-all duration-300">
+            <span class="material-symbols-outlined contact-icon-symbol group-hover:text-white transition-colors duration-300">location_on</span>
+          </div>
+          <div class="contact-text">
+            <p class="contact-label">Headquarters</p>
+            <p class="contact-value">Washington D.C. Metro Area</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <form id="contactForm" class="bg-surface-container-low p-12 space-y-8 shadow-[0px_24px_48px_rgba(0,0,0,0.5)]" onsubmit="submitForm(event)">
+      <div class="space-y-1">
+        <label class="text-[10px] uppercase tracking-[0.3em] font-bold text-neutral-400">Collaborator Name</label>
+        <input id="fName" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 text-on-surface p-4 transition-colors font-headline" placeholder="IDENTITY" type="text" required/>
+      </div>
+      <div class="space-y-1">
+        <label class="text-[10px] uppercase tracking-[0.3em] font-bold text-neutral-400">Communication Frequency</label>
+        <input id="fEmail" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 text-on-surface p-4 transition-colors font-headline" placeholder="EMAIL" type="email" required/>
+      </div>
+      <div class="space-y-1">
+        <label class="text-[10px] uppercase tracking-[0.3em] font-bold text-neutral-400">Subject</label>
+        <input id="fSubject" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 text-on-surface p-4 transition-colors font-headline" placeholder="MISSION OBJECTIVE" type="text"/>
+      </div>
+      <div class="space-y-1">
+        <label class="text-[10px] uppercase tracking-[0.3em] font-bold text-neutral-400">Objective</label>
+        <textarea id="fMessage" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 text-on-surface p-4 transition-colors font-headline" placeholder="MISSION DETAILS..." rows="4" required></textarea>
+      </div>
+      <button id="submitBtn" class="w-full bg-primary-container text-on-primary-container font-black py-6 uppercase tracking-widest text-lg hover:shadow-[0_0_30px_rgba(204,17,0,0.4)] transition-all active:scale-95" type="submit">
+        TRANSMIT
+      </button>
+      <p id="form-msg" class="text-center text-sm font-bold tracking-widest uppercase opacity-0 h-5"></p>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#0e0e0e] flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full font-['Space_Grotesk'] text-[0.75rem] tracking-widest uppercase" style="position:relative; z-index:2;">
+  <div class="text-lg font-bold text-neutral-200 mb-8 md:mb-0">BEAT REPUBLIC MEDIA GROUP</div>
+  <div class="flex gap-12 mb-8 md:mb-0">
+    <a class="text-neutral-500 hover:text-neutral-200 transition-colors opacity-70 hover:opacity-100" href="https://www.instagram.com/beatrepublicmg/" target="_blank">Instagram</a>
+    <a class="text-neutral-500 hover:text-neutral-200 transition-colors opacity-70 hover:opacity-100" href="https://go-goroyalty.com" target="_blank">Go-GoRoyalty</a>
+    <a class="text-neutral-500 hover:text-neutral-200 transition-colors opacity-70 hover:opacity-100" href="https://x.com/beatrepublicmg" target="_blank">Twitter / X</a>
+    <a class="text-neutral-500 hover:text-neutral-200 transition-colors opacity-70 hover:opacity-100" href="#connect">Contact</a>
+  </div>
+  <div class="text-neutral-500 text-center">© 2025 Beat Republic Media Group. All Rights Reserved.</div>
+</footer>
+
+<script>
+// ── Hero morph — driven by the sound spacer scroll, no extra track gap ──
+// Hero is sticky at z-index:0. The sound spacer (z-index:2) scrolls over it.
+// We read the spacer's position to drive the morph — starts when spacer enters
+// the viewport, completes over the first 80vh of spacer scroll. Zero gap.
+(function () {
+  var header    = document.querySelector('header');
+  var boxesWrap = document.getElementById('boxes-parallax');
+  var ticking   = false;
+
+  // Make header sticky
+  if (header) {
+    header.style.position        = 'sticky';
+    header.style.top             = '0';
+    header.style.zIndex          = '0';
+    header.style.transformOrigin = 'center center';
+    header.style.willChange      = 'transform, border-radius';
+    header.style.transform       = 'scale(1) rotate(0deg)';
+    header.style.borderRadius    = '0px';
+    header.style.overflow        = 'hidden';
+  }
+  // Skip morph animation on mobile — too expensive and disorienting on small screens
+  function isMobile() { return window.innerWidth <= 768; }
+
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(function () {
+        if (!header) { ticking = false; return; }
+
+        if (isMobile()) { ticking = false; return; }
+        var vpH   = window.innerHeight;
+        var panel = document.getElementById('sound-panel');
+
+        // Morph runs from first scroll pixel until the sound panel fully covers the viewport.
+        // End point = when panel top reaches viewport top (panelRect.top <= 0).
+        var panelRect  = panel ? panel.getBoundingClientRect() : { top: vpH };
+        var panelTop   = panelRect.top;
+
+        // Total scroll range = distance from page top to when panel top hits viewport top
+        // = current scrollY + panelTop (how far panel still needs to travel)
+        var morphTotal = window.scrollY + panelTop;
+        var p          = Math.max(0, Math.min(1, window.scrollY / morphTotal));
+
+        // Full Framer range: scale 1→0.8, rotate 0→-5deg
+        var scale  = 1 - p * 0.2;
+        var rotate = -p * 5;
+
+        header.style.transform    = 'scale(' + scale + ') rotate(' + rotate + 'deg)';
+        header.style.borderRadius = (p * 16) + 'px';
+        header.style.overflow     = 'hidden';
+
+        if (boxesWrap) {
+          boxesWrap.style.transform = 'translateY(' + (p * vpH * 0.25) + 'px)';
+        }
+
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}());
+
+// ── Scroll reveal ─────────────────────────────────────────────────
+(function () {
+  var items = document.querySelectorAll('.sr-item, .sr-breath');
+  if (!items.length) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  items.forEach(function (el) { io.observe(el); });
+}());
+
+// ── Background Boxes with trailing cursor effect ──────────────────
+(function () {
+  var COLORS = [
+    '#cc1100',
+    '#900900',
+    '#be0f00',
+    'rgba(255,180,167,0.6)',
+    '#3a3939',
+    '#2a2a2a',
+    '#353534',
+    'rgba(231,189,182,0.4)',
+    'rgba(93,63,58,0.9)'
+  ];
+
+  function randColor() {
+    return COLORS[Math.floor(Math.random() * COLORS.length)];
+  }
+
+  // Trail: keep a queue of recently lit cells and fade them out in sequence
+  // Each cell gets a fade timer — re-entering resets it
+  var FADE_DELAY   = 0;     // fade starts immediately
+  var FADE_STEPS   = 2;     // just 2 steps — quick dissolve
+  var FADE_STEP_MS = 120;   // ms between steps — total ~240ms tail
+  var TRAIL_HOLD   = 180;   // neighbours fade fast
+
+  function fadeOut(cell) {
+    // Clear any existing fade on this cell
+    if (cell._fadeTimer) { clearTimeout(cell._fadeTimer); cell._fadeTimer = null; }
+    if (cell._active) return; // cursor still on it — don't fade
+
+    var step = 0;
+    var color = cell.style.backgroundColor;
+
+    // Parse current opacity from rgba, or treat solid hex as opacity 1
+    var currentOpacity = 1;
+    var rgbaMatch = color.match(/rgba\([^,]+,[^,]+,[^,]+,\s*([\d.]+)\)/);
+    if (rgbaMatch) currentOpacity = parseFloat(rgbaMatch[1]);
+
+    function stepFade() {
+      step++;
+      var newOpacity = currentOpacity * (1 - step / FADE_STEPS);
+      if (step >= FADE_STEPS || newOpacity <= 0.04) {
+        cell.style.backgroundColor = 'transparent';
+        cell.style.transition = '';
+        return;
+      }
+      // Apply as CSS transition for smoothness
+      cell.style.transition = 'background-color ' + FADE_STEP_MS + 'ms ease';
+      // Fade by reducing opacity via a new rgba value
+      cell.style.backgroundColor = 'rgba(204,17,0,' + newOpacity.toFixed(3) + ')';
+      cell._fadeTimer = setTimeout(stepFade, FADE_STEP_MS);
+    }
+
+    cell._fadeTimer = setTimeout(stepFade, FADE_DELAY);
+  }
+
+  // Ripple: light up immediate neighbours at reduced intensity for trail glow
+  function rippleNeighbours(grid, idx, COLS, ROWS) {
+    var neighbours = [idx - 1, idx + 1, idx - COLS, idx + COLS];
+    neighbours.forEach(function(nIdx) {
+      if (nIdx < 0 || nIdx >= grid.children.length) return;
+      var nb = grid.children[nIdx];
+      if (nb._active) return; // cursor is on it, leave it alone
+      // Light neighbour at lower intensity
+      nb.style.transition = 'background-color 60ms ease';
+      nb.style.backgroundColor = 'rgba(204,17,0,0.35)';
+      // Schedule fade after hold
+      if (nb._rippleTimer) clearTimeout(nb._rippleTimer);
+      nb._rippleTimer = setTimeout(function() { fadeOut(nb); }, TRAIL_HOLD);
+    });
+  }
+
+  function buildGrid() {
+    var grid = document.getElementById('boxes-grid');
+    if (!grid) return;
+    var ROWS = 20, COLS = 20;
+
+    for (var i = 0; i < ROWS; i++) {
+      for (var j = 0; j < COLS; j++) {
+        var cell = document.createElement('div');
+        cell.className = 'box-cell';
+        cell._active = false;
+        cell._fadeTimer = null;
+        cell._rippleTimer = null;
+
+        if (i % 2 === 0 && j % 2 === 0) {
+          var ns = 'http://www.w3.org/2000/svg';
+          var svg = document.createElementNS(ns, 'svg');
+          svg.setAttribute('viewBox', '0 0 24 24');
+          svg.setAttribute('fill', 'none');
+          svg.setAttribute('stroke', '#333333');
+          svg.setAttribute('stroke-width', '1.5');
+          svg.className = 'box-plus';
+          var path = document.createElementNS(ns, 'path');
+          path.setAttribute('stroke-linecap', 'round');
+          path.setAttribute('stroke-linejoin', 'round');
+          path.setAttribute('d', 'M12 6v12m6-6H6');
+          svg.appendChild(path);
+          cell.appendChild(svg);
+        }
+
+        (function(c, row, col) {
+          var idx = row * COLS + col;
+          c.onmouseenter = function() {
+            c._active = true;
+            // Cancel any pending fade
+            if (c._fadeTimer) { clearTimeout(c._fadeTimer); c._fadeTimer = null; }
+            c.style.transition = 'background-color 40ms ease';
+            c.style.backgroundColor = randColor();
+            // No neighbour ripple — single cell trail only
+          };
+          c.onmouseleave = function() {
+            c._active = false;
+            // Start the stepped fade-out trail
+            fadeOut(c);
+          };
+        })(cell, i, j);
+
+        grid.appendChild(cell);
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildGrid);
+  } else {
+    buildGrid();
+  }
+}());
+
+// ── Cinematic card text parallax ─────────────────────────────────
+(function() {
+  var textEls = null;
+  var ticking  = false;
+
+  function init() {
+    textEls = document.querySelectorAll('.card-parallax-text');
+  }
+
+  function update() {
+    if (!textEls) { ticking = false; return; }
+    var vpH = window.innerHeight;
+
+    textEls.forEach(function(el) {
+      var rect = el.getBoundingClientRect();
+      // Skip if completely off screen
+      if (rect.bottom < -100 || rect.top > vpH + 100) return;
+      // Progress: 1 = card top at viewport bottom (entering), 0 = card at center, -1 = exiting top
+      var progress = (rect.top - vpH * 0.5) / (vpH * 0.5);
+      // Clamp to ±1
+      progress = Math.max(-1, Math.min(1, progress));
+      // Text moves opposite to scroll at 20% speed — lags behind creating depth
+      var shift = progress * 28;
+      el.style.transform = 'translateY(' + shift + 'px)';
+    });
+
+    ticking = false;
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+
+  // Initial call
+  setTimeout(update, 100);
+}());
+
+// ── Tap-to-flip for touch devices ────────────────────────────────
+(function() {
+  if (window.matchMedia('(hover: none)').matches) {
+    document.addEventListener('click', function(e) {
+      var scene = e.target.closest('.flip-scene');
+      if (!scene) return;
+      var card = scene.querySelector('.flip-card');
+      if (card) card.classList.toggle('flipped');
+    });
+  }
+}());
+
+// ── Contact Form ──────────────────────────────────────────────────
+async function submitForm(e) {
+  e.preventDefault();
+  var btn = document.getElementById('submitBtn');
+  var msg = document.getElementById('form-msg');
+  btn.textContent = 'TRANSMITTING...';
+  btn.disabled = true;
+  var payload = {
+    name:    document.getElementById('fName').value,
+    email:   document.getElementById('fEmail').value,
+    subject: document.getElementById('fSubject').value || 'BRMG Inquiry',
+    message: document.getElementById('fMessage').value
+  };
+  try {
+    var res = await fetch('https://n8n.srv856673.hstgr.cloud/webhook/contact-form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer mysite-form-token-2026-xK9p'
+      },
+      body: JSON.stringify(payload)
+    });
+    var data = await res.json();
+    if (data.success) {
+      msg.textContent = 'Signal transmitted. We will be in touch.';
+      msg.style.color = '#6cff80';
+      msg.style.opacity = '1';
+      document.getElementById('contactForm').reset();
+    } else { throw new Error(); }
+  } catch (err) {
+    msg.textContent = 'Transmission failed. Email contact@brmgdc.com directly.';
+    msg.style.color = '#ff6c6c';
+    msg.style.opacity = '1';
+  }
+  btn.textContent = 'TRANSMIT';
+  btn.disabled = false;
+  setTimeout(function () { msg.style.opacity = '0'; }, 7000);
+}
+</script>
+
+</body>
+</html>
