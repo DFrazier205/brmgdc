@@ -559,7 +559,7 @@
     #sound-panel { border-radius: 16px 16px 0 0 !important; }
 
     /* ── About section intro ── */
-    #about > div { padding: 40px 20px 0 !important; }
+    #about > div { padding: 40px 20px !important; }
     #about .text-5xl { font-size: 2.2rem !important; }
 
     /* ── About mission section — stack on mobile ── */
@@ -578,10 +578,13 @@
     /* ── Connect gap ── */
     #connect > div { gap: 32px !important; }
 
-    /* ── Objective card ── */
-    #objective-card { padding: 0 24px !important; }
+    /* ── Objective card — fix absolute left/right for mobile ── */
+    #objective-card { left: 20px !important; right: 20px !important; bottom: 40px !important; padding: 0 !important; }
     #objective-card h2 { font-size: clamp(2rem, 12vw, 4rem) !important; }
     #objective-card p { font-size: 1rem !important; }
+
+    /* ── Sound text black layer — align with white layer on mobile ── */
+    #sound-black-layer { left: 0 !important; right: 0 !important; }
 
     /* ── Stats numbers ── */
     .text-6xl { font-size: 2.5rem !important; }
@@ -591,6 +594,19 @@
 
     /* ── Card parallax disabled on mobile — too jittery ── */
     .card-parallax-text { transform: none !important; }
+  }
+
+  /* ── Hero title — stack words on narrow phones ── */
+  @media (max-width: 520px) {
+    #hero-parallax-text h1 {
+      white-space: normal !important;
+      font-size: clamp(3rem, 20vw, 4.5rem) !important;
+      line-height: 0.88 !important;
+    }
+    /* Each word becomes a block so BEAT and REPUBLIC stack cleanly */
+    #hero-parallax-text .hero-word { display: block !important; }
+    /* Hide the inline spacer span between words */
+    #hero-parallax-text h1 > span:not(.hero-word) { display: none !important; }
   }
 
   /* ── Touch: flip cards on tap ── */
