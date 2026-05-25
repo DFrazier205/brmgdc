@@ -243,6 +243,7 @@
     width: 100%;
     height: 100%;
     min-height: 320px;
+    overflow: hidden; /* clip 3D children at the non-preserve-3d boundary */
   }
   .flip-card {
     position: relative;
@@ -639,7 +640,7 @@
   .stat-word { font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#5d5b5b; }
   .flip-img  { width:100%; height:100%; object-fit:cover; display:block; }
   .flip-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,transparent 60%); }
-  .flip-front-content { position:absolute; bottom:0; left:0; padding:32px; }
+  .flip-front-content { position:absolute; bottom:0; left:0; right:0; padding:32px; overflow:hidden; }
 
 </style>
 </head>
@@ -790,8 +791,8 @@ function closeMobileNav() {
       <video
         id="sound-video"
         src="video.mp4"
-        muted playsinline preload="auto" autoplay
-        style="width:100%; height:100%; object-fit:cover; display:block;"
+        muted playsinline preload="auto"
+        style="width:100%; height:100%; object-fit:cover; display:block; pointer-events:none;"
       ></video>
 
       <!-- Single scroll wrapper — white and black text stack, crossfade on scroll -->
@@ -987,12 +988,13 @@ function closeMobileNav() {
   }, { passive: true });
 
   if (video) {
-    // autoplay (with muted+playsinline) forces mobile browsers to buffer the video.
-    // Pause on first play event so scroll controls playback — fires before any frame shows.
-    video.addEventListener('play', function () {
-      video.pause();
-      video.currentTime = 0;
-    }, { once: true });
+    // Trigger load when the section approaches — forces mobile to buffer
+    // without autoplay (which causes an iOS native play-button overlay).
+    var ioLoad = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) { video.load(); ioLoad.disconnect(); }
+    }, { rootMargin: '400px' });
+    ioLoad.observe(track);
+
     video.addEventListener('loadedmetadata', scrub);
     video.addEventListener('canplay', scrub);
     if (video.readyState >= 1) scrub();
