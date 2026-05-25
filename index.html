@@ -94,6 +94,12 @@
   ::-webkit-scrollbar-thumb { background: #cc1100; }
   #form-msg { transition: opacity .3s; }
 
+  /* Suppress native browser play-button overlay on iOS/Android */
+  video::-webkit-media-controls,
+  video::-webkit-media-controls-start-playback-button,
+  video::-webkit-media-controls-overlay-play-button,
+  video::-webkit-media-controls-enclosure { display: none !important; opacity: 0 !important; }
+
   /* ── Contact items — unified ── */
   .contact-item {
     display: flex;
@@ -528,8 +534,9 @@
     #sound-text-overlay { padding: 0 20px !important; bottom: 60px !important; }
     #sound-text-overlay .text-5xl { font-size: 2.2rem !important; }
 
-    /* ── Box grid — disable on mobile (too heavy, not touch-friendly) ── */
+    /* ── Box grid — disable on mobile; static CSS grid replaces it ── */
     #boxes-grid { display: none !important; }
+    #hero-mobile-grid { display: block !important; }
 
     /* ── Flip cards — tap to flip on mobile ── */
     .flip-scene { min-height: 280px !important; }
@@ -736,6 +743,20 @@ function closeMobileNav() {
 <header class="relative h-screen w-full flex flex-col justify-end px-8 pb-12 overflow-hidden bg-[#0e0e0e]">
   <div id="boxes-parallax" style="position:absolute;inset:0;z-index:0;overflow:hidden;">
     <div id="boxes-grid"></div>
+    <!-- Static isometric grid for mobile — same skew as JS grid, pure CSS, no JS weight -->
+    <div id="hero-mobile-grid" style="
+      display: none;
+      position: absolute;
+      inset: -60%;
+      pointer-events: none;
+      z-index: 1;
+      background-image:
+        linear-gradient(rgba(42,42,42,0.75) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(42,42,42,0.75) 1px, transparent 1px),
+        radial-gradient(ellipse 80% 50% at 40% 80%, rgba(204,17,0,0.18) 0%, transparent 65%);
+      background-size: 64px 32px, 64px 32px, 100% 100%;
+      transform: skewX(-48deg) skewY(14deg);
+    "></div>
     <div style="position:absolute;inset:0;pointer-events:none;z-index:2;background:radial-gradient(ellipse 70% 70% at 50% 50%, transparent 35%, #0e0e0e 75%);"></div>
     <div style="position:absolute;inset:0;pointer-events:none;z-index:3;background:linear-gradient(to top, #131313 0%, transparent 50%);"></div>
   </div>
