@@ -538,6 +538,21 @@
     #boxes-grid { display: none !important; }
     #hero-mobile-grid { display: block !important; }
 
+    /* ── Hero static grid — mobile only, no JS weight ── */
+    #hero-mobile-grid {
+      position: absolute !important;
+      top: -60% !important; right: -60% !important;
+      bottom: -60% !important; left: -60% !important;
+      pointer-events: none !important;
+      z-index: 1 !important;
+      background-image:
+        linear-gradient(rgba(42,42,42,0.75) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(42,42,42,0.75) 1px, transparent 1px),
+        radial-gradient(ellipse 80% 50% at 40% 80%, rgba(204,17,0,0.18) 0%, transparent 65%) !important;
+      background-size: 64px 32px, 64px 32px, 100% 100% !important;
+      transform: skewX(-48deg) skewY(14deg) !important;
+    }
+
     /* ── Flip cards — tap to flip on mobile ── */
     .flip-scene { min-height: 280px !important; }
 
@@ -743,20 +758,8 @@ function closeMobileNav() {
 <header class="relative h-screen w-full flex flex-col justify-end px-8 pb-12 overflow-hidden bg-[#0e0e0e]">
   <div id="boxes-parallax" style="position:absolute;inset:0;z-index:0;overflow:hidden;">
     <div id="boxes-grid"></div>
-    <!-- Static isometric grid for mobile — same skew as JS grid, pure CSS, no JS weight -->
-    <div id="hero-mobile-grid" style="
-      display: none;
-      position: absolute;
-      inset: -60%;
-      pointer-events: none;
-      z-index: 1;
-      background-image:
-        linear-gradient(rgba(42,42,42,0.75) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(42,42,42,0.75) 1px, transparent 1px),
-        radial-gradient(ellipse 80% 50% at 40% 80%, rgba(204,17,0,0.18) 0%, transparent 65%);
-      background-size: 64px 32px, 64px 32px, 100% 100%;
-      transform: skewX(-48deg) skewY(14deg);
-    "></div>
+    <!-- Static isometric grid for mobile — shown by media query, hidden on desktop -->
+    <div id="hero-mobile-grid" style="display:none;"></div>
     <div style="position:absolute;inset:0;pointer-events:none;z-index:2;background:radial-gradient(ellipse 70% 70% at 50% 50%, transparent 35%, #0e0e0e 75%);"></div>
     <div style="position:absolute;inset:0;pointer-events:none;z-index:3;background:linear-gradient(to top, #131313 0%, transparent 50%);"></div>
   </div>
@@ -1605,7 +1608,7 @@ function closeMobileNav() {
     header.style.top             = '0';
     header.style.zIndex          = '0';
     header.style.transformOrigin = 'center center';
-    header.style.willChange      = 'transform, border-radius';
+    header.style.willChange      = isMobile() ? 'auto' : 'transform, border-radius';
     header.style.transform       = 'scale(1) rotate(0deg)';
     header.style.borderRadius    = '0px';
     header.style.overflow        = 'hidden';
@@ -1614,11 +1617,10 @@ function closeMobileNav() {
   function isMobile() { return window.innerWidth <= 768; }
 
   function onScroll() {
+    if (isMobile()) return; // skip rAF entirely on mobile — no morph, no CPU cost
     if (!ticking) {
       requestAnimationFrame(function () {
         if (!header) { ticking = false; return; }
-
-        if (isMobile()) { ticking = false; return; }
         var vpH   = window.innerHeight;
         var panel = document.getElementById('sound-panel');
 
@@ -1835,11 +1837,12 @@ function closeMobileNav() {
   }
 
   window.addEventListener('scroll', function() {
+    if (window.innerWidth <= 768) return; // no parallax on mobile
     if (!ticking) { requestAnimationFrame(update); ticking = true; }
   }, { passive: true });
 
-  // Initial call
-  setTimeout(update, 100);
+  // Initial call (desktop only)
+  if (window.innerWidth > 768) setTimeout(update, 100);
 }());
 
 // ── Tap-to-flip for touch devices ────────────────────────────────
